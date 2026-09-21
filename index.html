@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tracker-container">
+    <h2>Daily Expense Tracker</h2>
+
+    <form id="expense-form">
+      <input type="text" id="desc-input" placeholder="Expense description (e.g., Coffee)" required>
+      <input type="number" id="amount-input" placeholder="Amount ($)" step="0.01" min="0.01" required>
+      <!-- Added Date Input -->
+      <input type="date" id="date-input" required>
+      <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Filter Control -->
+    <div class="filter-group">
+      <label for="filter-select">View Expenses:</label>
+      <select id="filter-select">
+        <option value="all">All Time</option>
+        <option value="today">Today</option>
+        <option value="month">This Month</option>
+      </select>
+    </div>
+
+    <div class="summary">
+      <h3>Total Spent: $<span id="total-amount">0.00</span></h3>
+    </div>
+
+    <ul id="expense-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
